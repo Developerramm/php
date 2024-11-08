@@ -3,7 +3,7 @@
 echo "<h3>Access modifier in PHP OOPs</h3>";
 
 class base{
-    public $name;
+    protected $name;
     public function __construct($name)
     {
         $this->name = $name;
@@ -15,7 +15,10 @@ class base{
 }
 
 class child extends base{
-
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
 }
 
 
