@@ -31,7 +31,7 @@ include 'header.php';
                         <td> <?= $row['phone']; ?> </td>
                         <td>
                             <a href='edit.php?id=<?= $row['id'];?>'>Edit</a>
-                            <a href='delete-inline.php'>Delete</a>
+                            <a href='delete-inline.php?id=<?= $row['id'];?>'>Delete</a>
                         </td>
                     </tr>
                 <?php } ?>
