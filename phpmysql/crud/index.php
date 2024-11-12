@@ -30,7 +30,7 @@ include 'header.php';
                         <td> <?= $row['cname']; ?> </td>
                         <td> <?= $row['phone']; ?> </td>
                         <td>
-                            <a href='edit.php'>Edit</a>
+                            <a href='edit.php?id=<?= $row['id'];?>'>Edit</a>
                             <a href='delete-inline.php'>Delete</a>
                         </td>
                     </tr>
