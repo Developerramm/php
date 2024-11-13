@@ -21,7 +21,7 @@
                 header("Location:{$hostname1}/admin/users.php");
             }
         }
-
+        mysqli_close($conn);
     }
 
 ?>
