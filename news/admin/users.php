@@ -11,7 +11,18 @@
             <div class="col-md-12">
                 <?php
                 require "config.php";
-                $sql = "SELECT * FROM user ORDER BY user_id DESC";
+
+                $limit = 3;
+
+                if (isset($_GET['page'])) {
+                    $page = $_GET['page'];
+                } else {
+                    $page = 1;
+                }
+
+                $offset = ($page - 1) * $limit;
+
+                $sql = "SELECT * FROM user ORDER BY user_id DESC LIMIT {$offset}, {$limit}";
                 $result = mysqli_query($conn, $sql) or die("Query Failed");
                 if (mysqli_num_rows($result) > 0) {
                 ?>
@@ -32,18 +43,18 @@
                                     <td class='id'> <?= $row['user_id']; ?> </td>
                                     <td class='id'> <?= $row['first_name']; ?> <?= $row['last_name']; ?> </td>
                                     <td class='id'> <?= $row['username']; ?> </td>
-                                    <td class='id'> <?php 
-                                        if($row['role'] == 1){
-                                           echo "Admin";
-                                        }else{
-                                           echo "User";
-                                        }
-                                    ?> </td>
+                                    <td class='id'> <?php
+                                                    if ($row['role'] == 1) {
+                                                        echo "Admin";
+                                                    } else {
+                                                        echo "User";
+                                                    }
+                                                    ?> </td>
                                     <td class='edit'>
-                                        <a href='update-user.php?id=<?= $row['user_id'];?>'><i class='fa fa-edit'></i></a>
+                                        <a href='update-user.php?id=<?= $row['user_id']; ?>'><i class='fa fa-edit'></i></a>
                                     </td>
                                     <td class='delete'>
-                                        <a href='delete-user.php?id=<?php echo $row['user_id'];?>'><i class='fa fa-trash-o'></i></a>
+                                        <a href='delete-user.php?id=<?php echo $row['user_id']; ?>'><i class='fa fa-trash-o'></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -51,12 +62,39 @@
                     </table>
                 <?php } else {
                     echo "<h3> No User found </h3>";
-                } ?>
-                <ul class='pagination admin-pagination'>
-                    <li class="active"><a>1</a></li>
-                    <li><a>2</a></li>
-                    <li><a>3</a></li>
-                </ul>
+                } 
+                    $sql1 = "SELECT * FROM user";
+                    $result1 = mysqli_query($conn,$sql1) or die("Query Failed");
+                    if(mysqli_num_rows($result1) > 0){
+                        $total_records = mysqli_num_rows($result1);
+                        $total_pages = ceil($total_records / $limit);
+
+                        echo "<ul class='pagination admin-pagination'>";
+
+                        if($page > 1){
+                            echo '<li><a href="users.php?page='.($page -1).'">prev</a></li>';
+                        }
+                        
+                        for($i = 1; $i<=$total_pages; $i++){
+                            if($i == $page){
+                                $active = "active";
+                            }else{
+                                $active = "";
+                            }
+                            echo "<li class = '{$active}'>
+                                <a href ='users.php?page={$i}' > {$i} </a>
+                            </li>";
+                        }
+
+                        if($total_pages > $page){
+                            echo '<li><a href="users.php?page='.($page +1).'">next</a></li>';
+                        }
+
+                        echo "</ul>";
+                    }
+                
+                ?>
+                
             </div>
         </div>
     </div>
