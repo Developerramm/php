@@ -1,5 +1,11 @@
 <?php include "header.php"; 
 
+    include 'config.php';
+    session_start();
+    if($_SESSION['role'] == '0'){
+        header("Location: {$hostname1}/admin/post.php");
+    }
+
     if(isset($_POST['save'])){
         require "config.php";
         $categoryName = mysqli_real_escape_string($conn,$_POST['cat']);
