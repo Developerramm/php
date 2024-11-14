@@ -1,4 +1,10 @@
-<?php include "header.php"; 
+<?php include "header.php";
+    
+    require 'config.php';
+    session_start();
+    if($_SESSION['role'] == 0){
+        header("Location:{$hostname1}/admin/post.php");
+    }
 
     if(isset($_POST['save'])){
 

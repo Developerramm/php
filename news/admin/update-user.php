@@ -1,6 +1,11 @@
 <?php include "header.php"; 
 
     require "config.php";
+    session_start();
+    if($_SESSION['role'] == 0){
+        header("Location: {$hostname1}/admin/post.php");
+    }
+
     if(isset($_POST['submit'])){
         $id = $_GET['id'];
         $fname = mysqli_real_escape_string($conn,$_POST['fname']);

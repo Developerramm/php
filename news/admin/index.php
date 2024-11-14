@@ -9,7 +9,6 @@ if(isset($_SESSION['username'])){
     header("Location: {$hostname1}/admin/post.php");
 }
 
-
 ?>
 
 <!doctype html>

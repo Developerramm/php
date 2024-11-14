@@ -1,4 +1,9 @@
 <?php include "header.php";
+    include 'config.php';
+    session_start();
+    if($_SESSION['role'] == 0){
+        header("Location: {$hostname1}/admin/post.php");
+    }
 ?>
 
 <?php
