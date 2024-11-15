@@ -12,6 +12,16 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <!-- Custom stlylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        #login{
+            color: white;
+            font-size: 24px;
+            text-align: center;
+        }
+        #login-div{
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 <!-- HEADER -->
@@ -21,8 +31,11 @@
         <!-- row -->
         <div class="row">
             <!-- LOGO -->
-            <div class=" col-md-offset-4 col-md-4">
+            <div class=" col-md-4 col-md-4">
                 <a href="index.php" id="logo"><img src="images/news.jpg"></a>
+            </div>
+            <div class=" col-md-offset-4 col-md-4" id="login-div">
+                <a href="admin/" id="login">Login</a>
             </div>
             <!-- /LOGO -->
         </div>

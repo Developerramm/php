@@ -41,7 +41,10 @@ if(isset($_SESSION['username'])){
                             <label>Password</label>
                             <input type="password" name="password" class="form-control" placeholder="" required>
                         </div>
-                        <input type="submit" name="login" class="btn btn-primary" value="login" />
+                        <div class="form-group">
+                            <input type="submit" name="login" class="btn btn-primary" value="login" />
+                            <a href="add-user.php" class="btn btn-primary">Register</a>
+                        </div>
                     </form>
                     <!-- /Form  End -->
                     <?php
