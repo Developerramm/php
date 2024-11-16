@@ -17,8 +17,15 @@ $obj = new Database();
 // print_r($obj->getResult());
 
 
-$obj->sql('SELECT * FROM student');
-echo "data in array ";
+// $obj->sql('SELECT * FROM student');
+// echo "data in array ";
+// echo "<pre>";
+// print_r($obj->getResult());
+// echo "</pre>";
+
+
+$obj->select('student','*',null,null,null,null);
+echo " selected data in array ";
 echo "<pre>";
 print_r($obj->getResult());
 echo "</pre>";
