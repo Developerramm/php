@@ -8,8 +8,12 @@ $obj = new Database();
 // echo "Insert id ";
 
 
-$obj->update('student',['name' => 'charu sharma', 'age' => 29, 'city' => 'delhi wali'],'id="7"');
-echo "updated result ";
-print_r($obj->getResult());
+// $obj->update('student',['name' => 'charu sharma', 'age' => 29, 'city' => 'delhi wali'],'id="7"');
+// echo "updated result ";
+// print_r($obj->getResult());
+
+// $obj->delete('student','id="5"');
+// echo "deleted result ";
+// print_r($obj->getResult());
 
 ?>

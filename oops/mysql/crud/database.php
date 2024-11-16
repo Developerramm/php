@@ -17,11 +17,12 @@ class Database{
         if(!$this->conn){
             $this->mysqli = new mysqli($this->db_host,$this->db_username,$this->db_password,$this->db_name);
             $this->conn = true;
-        }
-        
-        if($this->mysqli->connect_error){
-            array_push($this->result,$this->mysqli->connect_error);
-            return false;
+
+
+            if($this->mysqli->connect_error){
+                array_push($this->result,$this->mysqli->connect_error);
+                return false;
+            }
         }else{
             return true;
         }
@@ -78,8 +79,23 @@ class Database{
 
     // function to delete table or row(s) from database
 
-    public function delete(){
+    public function delete($table,$where = null){
+        if($this->tableExists($table)){
+            $sql = "DELETE FROM $table";
+            if($where != null){
+                $sql .= " WHERE $where";
+            }
+            if($this->mysqli->query($sql)){
+                array_push($this->result,$this->mysqli->affected_rows);
+                return true;
+            }else{
+                array_push($this->result,$this->mysqli->error);
+                return false;
+            }
 
+        }else{
+            return false;
+        }
     }
 
     // function to fetch data from database
