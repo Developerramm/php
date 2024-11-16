@@ -103,6 +103,22 @@ class Database{
 
     }
 
+    // raw sql comman
+    public function sql($sql){
+        // query send by user
+        $query  = $this->mysqli->query($sql);
+
+        if($query){
+            // if query run , store data in result array and return;
+            $this->result = $query->fetch_all(MYSQLI_ASSOC);
+            return true;
+        }else{
+            // store error in array and return
+            array_push($this->result,$this->mysqli->error);
+            return false;
+        }
+    }
+
     // check table exist or not
     private function tableExists($tableName){
         $sql = "SHOW TABLES FROM $this->db_name LIKE '$tableName'";

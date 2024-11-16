@@ -16,4 +16,12 @@ $obj = new Database();
 // echo "deleted result ";
 // print_r($obj->getResult());
 
+
+$obj->sql('SELECT * FROM student');
+echo "data in array ";
+echo "<pre>";
+print_r($obj->getResult());
+echo "</pre>";
+
+
 ?>
