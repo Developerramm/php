@@ -1,4 +1,4 @@
-INSERT INTO student(name,age,city) 
+INSERT INTO students(name,age,city) 
 VALUES
 ("Ram Kumar",20,"Noida"),
 ("Pooja",30,"Delhi"),

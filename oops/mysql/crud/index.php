@@ -24,13 +24,15 @@ $obj = new Database();
 // echo "</pre>";
 
 
-$obj->select('student','*',null,null,null,null);
+$obj->select('students','*',null,null,null,2);
 echo " selected data in array ";
 echo "<pre>";
 print_r($obj->getResult());
 echo "</pre>";
 
-echo "Ram Kumar";
+$obj->pagination("students",null,null,2);
+
+
 
 
 ?>
