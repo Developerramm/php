@@ -30,5 +30,7 @@ echo "<pre>";
 print_r($obj->getResult());
 echo "</pre>";
 
+echo "Ram Kumar";
+
 
 ?>
