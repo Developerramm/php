@@ -31,20 +31,14 @@
                         <th>City</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Ram Kumar</td>
-                        <td>20</td>
-                        <td>Noida</td>
-                    </tr>
-                </tbody>
+               
             </table>
         </div>
 
         <script type="text/javascript" src="jquery.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
+
                 console.log("maniyari")
                $("#load-button").on('click',function(e){
                     $.ajax({
@@ -55,6 +49,8 @@
                         }
                     });
                });
+
+               
             });
         </script>
 
