@@ -13,6 +13,7 @@ if (mysqli_num_rows($result) > 0) {
                             <th>Name</th>
                             <th>Age</th>
                             <th>City</th>
+                            <th>Edit</th>
                             <th>delete</th>
                         </tr>
                     </thead><tbody>';
@@ -24,7 +25,9 @@ if (mysqli_num_rows($result) > 0) {
                             <td> {$row["name"]} </td>
                             <td> {$row["age"]} </td>
                             <td> {$row["city"]} </td>
-                            <td> <button class ='btn btn-danger delete-btn' data-id='{$row["id"]}'>delete</button> </td>
+                            <td> <button class ='btn btn-warning edit-btn' data-eid='{$row["id"]}'>Edit</button> </td>
+                            <td> 
+                            <button class ='btn btn-danger delete-btn' data-id='{$row["id"]}'>delete</button> </td>
                         </tr>
                     ";
     }
