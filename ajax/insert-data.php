@@ -98,7 +98,34 @@
                             }
                         });
                     }
-                })
+                });
+
+
+                $(document).on('click', ".delete-btn", function() {
+                    var studentId = $(this).data('id');
+
+                    if (confirm("Do You want to delete record")) {
+                        var element = this;
+
+                        $.ajax({
+                            url: "ajax-delete.php",
+                            type: "POST",
+                            data: {
+                                id: studentId
+                            },
+
+                            success: function(data) {
+                                if (data == 1) {
+                                    $(element).closest("tr").fadeOut();
+                                } else {
+                                    $("#error-message").html("Can't Delete").slideDown();
+                                    $("#success-message").slideUp();
+                                }
+                            }
+                        });
+                    }
+
+                });
 
             });
         </script>
