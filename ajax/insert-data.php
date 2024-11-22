@@ -47,13 +47,18 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-md-6">
                 <h3 class="text-center">PHP AJAX INSERT DATA </h3>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Search</label>
+                <input type="text" id="search" autocomplete="off" class="form-control">
             </div>
         </div>
 
         <div class="row">
             <div class="col">
+                <h3 class="text-center my-3 text-success">Insert data in database </h3>
                 <form id="addform">
                     <table class="table table-borderless">
                         <tr>
@@ -69,7 +74,9 @@
                             <td><input class="form-control" type="text" name="city" id="city"></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>
+                                
                                 <input type="button" id="save-button" value="Save data" class="btn btn-primary">
                             </td>
                         </tr>
@@ -222,6 +229,22 @@
                         }
                     });
                 });
+
+                // search bar functionality
+                $("#search").on("keyup",function(){
+                    var searchTerm = $(this).val();
+
+                    $.ajax({
+                        url : "ajax-live-search.php",
+                        type : "POST",
+                        data : {search : searchTerm},
+                        success : function(data){
+                            $("#table-data").html(data);
+                        }
+                    });
+
+                });
+
             });
         </script>
 
