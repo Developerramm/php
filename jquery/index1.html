@@ -35,15 +35,20 @@
       </p>
     </div>
     <br /><br />
-    <button id="btn">Add Style</button>
 
     <script src="jquery.js"></script>
 
     <script>
       $(document).ready(function () {
-        $("#btn").click(function () {
-          $("#box").css("background-color", "red");
+
+        $("#box").on("click", function () {
+          $(this).css("background-color", "orange");
         });
+
+        $("#box").on("mouseover mouseout", function () {
+          $(this).toggleClass("first");
+        });
+        
       });
     </script>
   </body>
