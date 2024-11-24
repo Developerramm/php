@@ -7,25 +7,31 @@
   </head>
   <body>
 
-    <div id="box1">
-        <h2>Text box 1</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, et.</p>
-    </div>
-    <div id="box2">
-        <h2>text box 2</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, dolores modi? Laudantium enim nulla ipsa sequi optio sint temporibus nam?</p>
+    <div id="box" class="test">
+        <h2>Text box 2</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum quaerat necessitatibus, ducimus aspernatur explicabo unde quia repellat provident molestiae labore.</p>
+
+        <ul id="list">
+            <li>Orange</li>
+            <li class="test">Banana</li>
+            <li>Grapes</li>
+            <li class="test">Apple</li>
+            <li>Guava</li>
+        </ul>
     </div>
 
+
+
+    
     <script src="jquery.js"></script>
     <script>
       $(document).ready(function () {
         
-        var data1 = $("#box1").html();
-        console.log(data1)
+        var data1 = $("#list").css("color","red");
+        $(".test").css("border","2px solid blue");
 
-        var data2 = $("#box2").html();
-        console.log(data2);
-
+        
+        
       });
     </script>
   </body>
