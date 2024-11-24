@@ -4,34 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jquery tutorial 1</title>
+    <!-- <link rel="stylesheet" href="bootstrap.css" /> -->
   </head>
+
   <body>
-
-    <div id="box" class="test">
-        <h2>Text box 2</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum quaerat necessitatibus, ducimus aspernatur explicabo unde quia repellat provident molestiae labore.</p>
-
-        <ul id="list">
-            <li>Orange</li>
-            <li class="test">Banana</li>
-            <li>Grapes</li>
-            <li class="test">Apple</li>
-            <li>Guava</li>
-        </ul>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="test text-bg-primary p-3" id="box">
+            <h2>Test Box</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Inventore, blanditiis quasi odio repellat ipsam placeat
+              accusantium reprehenderit asperiores temporibus minus?
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
-
-
-    
     <script src="jquery.js"></script>
     <script>
       $(document).ready(function () {
-        
-        var data1 = $("#list").css("color","red");
-        $(".test").css("border","2px solid blue");
+        $("#box").click(function () {
+          $(this).css("background-color", "red");
+        });
 
-        
-        
+        $("#box").dblclick(function () {
+          $(this).css("background-color", "orange");
+        });
+
+        $("#box").contextmenu(function () {
+          $(this).css("background-color", "blue");
+        });
+
+        $("#box").mouseenter(function () {
+          $(this).css("background-color", "magenta");
+        });
+
+        $("#box").mouseleave(function () {
+          $(this).css("background-color", "tan");
+        });
       });
     </script>
   </body>
