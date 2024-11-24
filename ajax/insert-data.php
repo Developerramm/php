@@ -76,7 +76,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                
+
                                 <input type="button" id="save-button" value="Save data" class="btn btn-primary">
                             </td>
                         </tr>
@@ -101,6 +101,18 @@
                 <div id="close-btn">X</div>
             </div>
         </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+        
 
         <script type="text/javascript" src="jquery.js"></script>
         <script type="text/javascript">
@@ -231,20 +243,41 @@
                 });
 
                 // search bar functionality
-                $("#search").on("keyup",function(){
+                $("#search").on("keyup", function() {
                     var searchTerm = $(this).val();
 
                     $.ajax({
-                        url : "ajax-live-search.php",
-                        type : "POST",
-                        data : {search : searchTerm},
-                        success : function(data){
+                        url: "ajax-live-search.php",
+                        type: "POST",
+                        data: {
+                            search: searchTerm
+                        },
+                        success: function(data) {
                             $("#table-data").html(data);
                         }
                     });
 
                 });
 
+                function loadTable(page){
+                    $.ajax({
+                        url : "ajax-pagination.php",
+                        type : "POST",
+                        data : {page_no : page},
+                        success : function(data){
+                            $("#table-data").html(data);
+                        }
+                    });
+                }
+                loadTable();
+
+                // pagination code
+                $(document).on("click","#pagination a",function(e){
+                    e.preventDefault();
+                    var page_id = $(this).attr("id");
+                    loadTable(page_id);
+                    
+                });
             });
         </script>
 
