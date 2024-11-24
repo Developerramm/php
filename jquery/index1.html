@@ -16,26 +16,28 @@
   </head>
 
   <body>
-    <div class="test" id="box">
-      <h2>Test Box</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
-        blanditiis quasi odio repellat ipsam placeat accusantium reprehenderit
-        asperiores temporibus minus?
-      </p>
-    </div>
+    <h2>Form event</h2>
+    
+    <form id="sform">
+        <label>Name</label>
+        <input type="text" id="sname"><br><br>
+
+        <label>class</label>
+        <input type="text" id="sclass">
+        <br><br>
+
+        <select id="scountry">
+            <option value="ind">India</option>
+            <option value="Nepal">Nepal</option>
+            <option value="srilanka">Sri Lanka</option>
+        </select>
+        <br><br>
+        <input type="submit">
+    </form>
+
 
     <script src="jquery.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("body").keypress(() => {
-          $("body").css("background-color", "blue");
-        });
-
-        $("body").keyup(() => {
-          $("body").css("background-color", "red");
-        });
-      });
-    </script>
+    <script src="event.js"></script>
+    
   </body>
 </html>
