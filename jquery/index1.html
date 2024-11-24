@@ -6,10 +6,26 @@
     <title>jquery tutorial 1</title>
   </head>
   <body>
+
+    <div id="box1">
+        <h2>Text box 1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, et.</p>
+    </div>
+    <div id="box2">
+        <h2>text box 2</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, dolores modi? Laudantium enim nulla ipsa sequi optio sint temporibus nam?</p>
+    </div>
+
     <script src="jquery.js"></script>
     <script>
       $(document).ready(function () {
-        console.log("Ram Kumar");
+        
+        var data1 = $("#box1").html();
+        console.log(data1)
+
+        var data2 = $("#box2").html();
+        console.log(data2);
+
       });
     </script>
   </body>
