@@ -11,33 +11,41 @@
         padding: 5px;
         border: 1px solid black;
         border-radius: 5px;
+        width: 300px;
+        height: 300px;
+        overflow: scroll;
       }
     </style>
   </head>
 
   <body>
-    <h2>Form event</h2>
-    
-    <form id="sform">
-        <label>Name</label>
-        <input type="text" id="sname"><br><br>
+    <h2>Windows events</h2>
 
-        <label>class</label>
-        <input type="text" id="sclass">
-        <br><br>
-
-        <select id="scountry">
-            <option value="ind">India</option>
-            <option value="Nepal">Nepal</option>
-            <option value="srilanka">Sri Lanka</option>
-        </select>
-        <br><br>
-        <input type="submit">
-    </form>
-
-
+    <div id="box">
+        <h2>Text box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab architecto iure quo repudiandae repellendus exercitationem veniam quasi unde, voluptates, nulla necessitatibus nesciunt harum quae nam perferendis aut quisquam sint, eaque rem molestias laboriosam voluptate? Tenetur dolor ad facere aperiam ullam totam laborum possimus, eum debitis eaque deleniti aspernatur nemo! Numquam placeat exercitationem consectetur sunt minus, animi molestiae dicta id odit!uptas, dignissimos ipsa ipsam eligendi quibusdam, tempore molestias rem facere nihil? Esse et perferendis error perspiciatis aperiam quisquam ex!</p>
+    </div>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet a esse fugiat nostrum quo aperiam natus, id commodi rem eligendi. Reiciendis quos, laboriosam velit fuga vel ullam perferendis sint autem delectus impedit minima, neque quibusdam. Corporis illo in neque recusandae. Obcaecati consequatur eveniet provident veritatis aliquid possimus explicabo molestias illo impedit exercitationem at reprehenderit nemo, distinctio officiis eaque, libero quisquam sapiente voluptatum corporis dolor. Eaque voluptate blanditiis laboriosam consectetur et placeat, reiciendis alias rem laborum hic nostrum quae exercitationem earum dicta accusantium quisquam tempore facilis perspiciatis voluptatum aliquam perferendis eius quo inventore enim! Ratione, nobis! Facere at facilis necessitatibus? Perferendis ipsum minima nam quos, aperiam neque dolorem voluptatibus maxime architecto officia modi voluptatem reiciendis, tempore harum rerum accusantium cum quasi amet. Iure quaerat pariatur nesciunt eos consequatur debitis distinctio? Veniam magni, temporibus incidunt dolorum hic dignissimos praesentium voluptate! Pariatur quia exercitationem explicabo quas molestias sed deleniti suscipit laboriosam asperiores minima necessitatibus reiciendis harum unde ipsum optio illo, numquam neque a? Maxime inventore suscipit incidunt velit quae, magnam praesentium dolor voluptatem ex obcaecati accusantium dignissimos nobis veritatis doloribus impedit saepe odio ipsam! Magnam repudiandae maxime repellat nihil dolorum consequatur saepe quaerat odio, animi, facere, distinctio deserunt et libero dolor eaque officiis!
+    </div>
     <script src="jquery.js"></script>
-    <script src="event.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $(window).scroll(function(){
+                console.log("You are scrilling here");
+            })
+
+            $("#box").scroll(function(){
+                console.log("scrilling in div");
+            })
+
+            $(window).resize(function(){
+                console.log("You are resizing widnows");
+            });
+
+        });
+    </script>
     
   </body>
 </html>
