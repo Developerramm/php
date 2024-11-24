@@ -7,7 +7,7 @@
     <!-- <link rel="stylesheet" href="bootstrap.css" /> -->
     <style>
       #box {
-        background-color: palevioletred;
+        /* background-color: palevioletred; */
         padding: 5px;
         border: 1px solid black;
         border-radius: 5px;
@@ -15,6 +15,12 @@
       }
       .color{
         color: white;
+      }
+      .first{
+        background-color: lightblue;
+      }
+      .second{
+        background-color: tan;
       }
     </style>
   </head>
@@ -25,19 +31,29 @@
     <div id="box" class="test abc">
         <h2>Text Box</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cum.</p>
-    </div>
-    <button id="clickbutton">set value</button>
+    </div><br><br>
+    <button id="addbutton">Add button</button>
+    <button id="removebutton">Remove Class</button>
+    <button id="togglebutton">Toggle Class</button>
 
     <script src="jquery.js"></script>
     
     <script>
-       $(document).ready(function(){
-          $("#clickbutton").click(()=>{
-            $("#box h2").text("Ram Kumar");
-            $("#box p").text("This is simple text here");
-            $("#box p").attr('class',"color");
-          })
-       });
+      $(document).ready(function(){
+
+        $("#addbutton").click(()=>{
+          $("#box").addClass("first");
+        })
+
+        $("#removebutton").click(()=>{
+          $("#box").removeClass("first");
+        })
+
+        $("#togglebutton").click(()=>{
+          $("#box").toggleClass("second");
+        })
+
+      });
     </script>
     
   </body>
