@@ -11,15 +11,14 @@
         padding: 5px;
         border: 1px solid black;
         border-radius: 5px;
-       
       }
-      .color{
+      .color {
         color: white;
       }
-      .first{
+      .first {
         background-color: lightblue;
       }
-      .second{
+      .second {
         background-color: tan;
       }
     </style>
@@ -28,33 +27,24 @@
   <body>
     <h2>Set Method in jquery</h2>
 
-    <div id="box" class="test abc">
-        <h2>Text Box</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cum.</p>
-    </div><br><br>
-    <button id="addbutton">Add button</button>
-    <button id="removebutton">Remove Class</button>
-    <button id="togglebutton">Toggle Class</button>
+    <div id="box">
+      <h2>Text Box</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
+        cum.
+      </p>
+    </div>
+    <br /><br />
+    <button id="btn">Add Style</button>
 
     <script src="jquery.js"></script>
-    
+
     <script>
-      $(document).ready(function(){
-
-        $("#addbutton").click(()=>{
-          $("#box").addClass("first");
-        })
-
-        $("#removebutton").click(()=>{
-          $("#box").removeClass("first");
-        })
-
-        $("#togglebutton").click(()=>{
-          $("#box").toggleClass("second");
-        })
-
+      $(document).ready(function () {
+        $("#btn").click(function () {
+          $("#box").css("background-color", "red");
+        });
       });
     </script>
-    
   </body>
 </html>
