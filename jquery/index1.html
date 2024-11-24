@@ -5,45 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jquery tutorial 1</title>
     <!-- <link rel="stylesheet" href="bootstrap.css" /> -->
+    <style>
+      #box {
+        background-color: palevioletred;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+    </style>
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="test text-bg-primary p-3" id="box">
-            <h2>Test Box</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Inventore, blanditiis quasi odio repellat ipsam placeat
-              accusantium reprehenderit asperiores temporibus minus?
-            </p>
-          </div>
-        </div>
-      </div>
+    <div class="test" id="box">
+      <h2>Test Box</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+        blanditiis quasi odio repellat ipsam placeat accusantium reprehenderit
+        asperiores temporibus minus?
+      </p>
     </div>
 
     <script src="jquery.js"></script>
     <script>
       $(document).ready(function () {
-        $("#box").click(function () {
-          $(this).css("background-color", "red");
+        $("body").keypress(() => {
+          $("body").css("background-color", "blue");
         });
 
-        $("#box").dblclick(function () {
-          $(this).css("background-color", "orange");
-        });
-
-        $("#box").contextmenu(function () {
-          $(this).css("background-color", "blue");
-        });
-
-        $("#box").mouseenter(function () {
-          $(this).css("background-color", "magenta");
-        });
-
-        $("#box").mouseleave(function () {
-          $(this).css("background-color", "tan");
+        $("body").keyup(() => {
+          $("body").css("background-color", "red");
         });
       });
     </script>
