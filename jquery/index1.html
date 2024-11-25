@@ -7,7 +7,6 @@
     <!-- <link rel="stylesheet" href="bootstrap.css" /> -->
     <style>
       #box {
-        /* background-color: palevioletred; */
         padding: 5px;
         border: 1px solid black;
         border-radius: 5px;
@@ -35,20 +34,22 @@
       </p>
     </div>
     <br /><br />
+    <button id="append">Append</button>
+    <button id="prepend">Prepend</button>
 
     <script src="jquery.js"></script>
 
     <script>
       $(document).ready(function () {
 
-        $("#box").on("click", function () {
-          $(this).css("background-color", "orange");
+        $("#append").click(function () {
+          $("#box").append("<h3>This is new heading</h3>");
         });
 
-        $("#box").on("mouseover mouseout", function () {
-          $(this).toggleClass("first");
+        $("#prepend").click(function () {
+          $("#box").prepend("<h2>This is prepended heading</h2>");
         });
-        
+
       });
     </script>
   </body>
