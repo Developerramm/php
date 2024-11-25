@@ -34,21 +34,22 @@
       </p>
     </div>
     <br /><br />
-    <button id="append">Append</button>
-    <button id="prepend">Prepend</button>
+    <button id="afterbtn">Add After</button>
+    <button id="beforebtn">Add Before </button>
 
     <script src="jquery.js"></script>
 
     <script>
       $(document).ready(function () {
 
-        $("#append").click(function () {
-          $("#box").append("<h3>This is new heading</h3>");
-        });
+        $("#afterbtn").click(()=>{
+          $("#box").after("<h3>New h3 heading is added<h3/>");
+        })
 
-        $("#prepend").click(function () {
-          $("#box").prepend("<h2>This is prepended heading</h2>");
-        });
+        $("#beforebtn").click(()=>{
+          $("#box").before("<h3>New h3 heading is added<h3/>");
+        })
+        
 
       });
     </script>
