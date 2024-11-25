@@ -34,23 +34,20 @@
       </p>
     </div>
     <br /><br />
-    <button id="afterbtn">Add After</button>
-    <button id="beforebtn">Add Before </button>
+    <button id="emptybtn">Empty</button>
+    <button id="removebtn">Remove</button>
 
     <script src="jquery.js"></script>
 
     <script>
       $(document).ready(function () {
+        $("#emptybtn").click(() => {
+          $("#box").empty();
+        });
 
-        $("#afterbtn").click(()=>{
-          $("#box").after("<h3>New h3 heading is added<h3/>");
-        })
-
-        $("#beforebtn").click(()=>{
-          $("#box").before("<h3>New h3 heading is added<h3/>");
-        })
-        
-
+        $("#removebtn").click(() => {
+          $("#box p").remove();
+        });
       });
     </script>
   </body>
