@@ -7,7 +7,6 @@
     <!-- <link rel="stylesheet" href="bootstrap.css" /> -->
     <style>
       #box {
-        padding: 5px;
         border: 1px solid black;
         border-radius: 5px;
       }
@@ -19,6 +18,13 @@
       }
       .second {
         background-color: tan;
+      }
+
+      #box2{
+        border: 1px solid black;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
       }
     </style>
   </head>
@@ -33,21 +39,21 @@
         cum.
       </p>
     </div>
-    <br /><br />
-    <button id="emptybtn">Empty</button>
-    <button id="removebtn">Remove</button>
+    <div id="box2">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, quo!</p>
+    </div>
+
+    <button id="clone">Clone</button>
 
     <script src="jquery.js"></script>
 
     <script>
       $(document).ready(function () {
-        $("#emptybtn").click(() => {
-          $("#box").empty();
+
+        $("#clone").click(()=>{
+          $("#box h2").clone().prependTo("#box2");
         });
 
-        $("#removebtn").click(() => {
-          $("#box p").remove();
-        });
       });
     </script>
   </body>
